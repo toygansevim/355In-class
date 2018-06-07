@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map Demo</title>
+    <style>
+        #map {
+            height: 600px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Google Map Demo</h3>
+<div id="map"></div>
+
+<script>
+
+    function initMap() {
+        var grc = {lat: 47.3135852, lng: -122.1800072};
+
+        var LAstadium = {lat: 34.0430, lng: -118.2673};
+        var VegasDay = {lat: 36.1162, lng: -115.1745};
+        var SpaceNeedle = {lat: 47.6205, lng: -122.3493};
+
+        var BAU = {lat: 41.0421, lng: 29.0090};
+
+        var mapDiv = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: VegasDay
+        });
+
+
+        var markerLA = new google.maps.Marker(
+            {
+                position: LAstadium,
+                map: mapDiv,
+                title: "Los Angles"
+            }
+        );
+
+        var markerLV = new google.maps.Marker(
+            {
+                position: VegasDay,
+                map: mapDiv,
+                title: "Las Vegas"
+
+            }
+        );
+
+        var markerWA = new google.maps.Marker(
+            {
+                position: SpaceNeedle,
+                map: mapDiv,
+                title: "Space Needle"
+
+            }
+        );
+
+
+    }
+</script>
+
+This script's url is important it has a callback function that waits for the (async defer) everything to load before
+they
+are displayed
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6yQWeHReOP7qsu80PrjUUBDs5IjHXkQU&callback=initMap">
+
+</script>
+</body>
+</html>
